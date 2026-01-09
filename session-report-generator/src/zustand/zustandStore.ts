@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import type { Attendance, Member } from "../TypesAndEnums";
+import { Trainer, Venue, type Attendance, type Member } from "../TypesAndEnums";
 import { getCurrentDate } from "../helper";
 
 interface ReportStore {
@@ -13,11 +13,11 @@ interface ReportStore {
   time: string;
   setTime: (value: string) => void;
 
-  venue: string;
-  setVenue: (value: string) => void;
+  venue: Venue;
+  setVenue: (value: Venue) => void;
 
-  trainer: string;
-  setTrainer: (value: string) => void;
+  trainer: Trainer;
+  setTrainer: (value: Trainer) => void;
 
   coordinator: string;
   setCoordinator: (value: string) => void;
@@ -43,10 +43,10 @@ export const useReportStore = create<ReportStore>()(
       time: "",
       setTime: (value) => set({ time: value }),
 
-      venue: "",
+      venue: Venue.COMM2B,
       setVenue: (value) => set({ venue: value }),
 
-      trainer: "",
+      trainer: Trainer.AKHIL,
       setTrainer: (value) => set({ trainer: value }),
 
       coordinator: "",

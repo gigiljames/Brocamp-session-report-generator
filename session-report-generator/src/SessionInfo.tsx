@@ -112,7 +112,7 @@ function SessionInfo() {
         <label className={labelClasses}>Venue</label>
         <select
           className={inputClasses}
-          onChange={(e) => setVenue(e.target.value)}
+          onChange={(e) => setVenue(e.target.value as Venue)}
           value={venue}
         >
           <option value="">Select venue</option>
@@ -130,7 +130,7 @@ function SessionInfo() {
           <select
             className={inputClasses}
             value={trainer}
-            onChange={(e) => setTrainer(e.target.value)}
+            onChange={(e) => setTrainer(e.target.value as Trainer)}
           >
             <option value="">Select Trainer</option>
             {Object.values(Trainer).map((trainer) => (

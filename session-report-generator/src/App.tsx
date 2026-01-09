@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SessionInfo from "./SessionInfo";
 import AttendanceComponent from "./AttendanceComponent";
 import ReportComponent from "./ReportComponent";
@@ -6,6 +6,9 @@ import { Toaster } from "react-hot-toast";
 import { motion } from "framer-motion";
 
 function App() {
+  useEffect(() => {
+    document.title = "Session Report Generator";
+  }, []);
   const [sessionComponent, setSessionComponent] = useState<
     "info" | "attendance"
   >("info");
