@@ -4,6 +4,9 @@ export enum Attendance {
   REVIEW = "review",
   LEAVE = "leave",
   NO_SESSION = "no-session",
+  SUSPENSION = "suspension",
+  IN_HOUSE = "in-house",
+  REFRESHMENT = "refreshment",
 }
 
 export enum Venue {
@@ -26,8 +29,7 @@ export enum Venue {
 
 export enum Trainer {
   AKHIL = "Akhil Jose Palatty",
-  ALEENA = "Aleena ma'am",
-  MITRA = "Mitra ma'am",
+  HERRICK = "Herrick Joseph",
 }
 
 export interface Member {
@@ -48,4 +50,7 @@ export interface GenerateReportType {
   reviewList: string[];
   leaveList: string[];
   noSessionList: string[];
+  suspensionList: string[];
+  inHouseList: string[];
+  refreshmentList: string[];
 }

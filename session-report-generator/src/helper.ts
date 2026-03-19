@@ -38,12 +38,27 @@ export function getReport(data: GenerateReportType) {
   if (data.noSessionList.length > 0) {
     noSessionListString = "🚫 No Session\n" + data.noSessionList.join("\n");
   }
+  let suspensionListString = "";
+  if (data.suspensionList.length > 0) {
+    suspensionListString = "⚠️ Suspension\n" + data.suspensionList.join("\n");
+  }
+  let inHouseListString = "";
+  if (data.inHouseList.length > 0) {
+    inHouseListString = "🏠 In-House\n" + data.inHouseList.join("\n");
+  }
+  let refreshmentListString = "";
+  if (data.refreshmentList.length > 0) {
+    refreshmentListString = "☕ Refreshment\n" + data.refreshmentList.join("\n");
+  }
   attendaceArr.push(
     presentListString,
     absentListString,
     reviewListString,
     leaveListString,
-    noSessionListString
+    noSessionListString,
+    suspensionListString,
+    inHouseListString,
+    refreshmentListString
   );
   attendaceArr = attendaceArr.filter((item) => item !== "");
   const attendanceString = attendaceArr.join("\n");

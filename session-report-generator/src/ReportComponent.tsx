@@ -38,6 +38,18 @@ function ReportComponent() {
       .filter((member) => member.attendance === Attendance.NO_SESSION)
       .map((member) => member.name)
       .sort();
+    const suspensionList = memberList
+      .filter((member) => member.attendance === Attendance.SUSPENSION)
+      .map((member) => member.name)
+      .sort();
+    const inHouseList = memberList
+      .filter((member) => member.attendance === Attendance.IN_HOUSE)
+      .map((member) => member.name)
+      .sort();
+    const refreshmentList = memberList
+      .filter((member) => member.attendance === Attendance.REFRESHMENT)
+      .map((member) => member.name)
+      .sort();
     const data: GenerateReportType = {
       batch,
       date,
@@ -51,6 +63,9 @@ function ReportComponent() {
       leaveList,
       reviewList,
       noSessionList,
+      suspensionList,
+      inHouseList,
+      refreshmentList,
     };
     setReport(getReport(data));
     toast.success("Report Generated!");
